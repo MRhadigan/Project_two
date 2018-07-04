@@ -1,0 +1,42 @@
+package Lab;
+import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.Period;
+
+public class Dates {
+
+	public static void main(String args[]) {
+	Scanner scnr = new Scanner (System.in); 
+	int firstYear;
+	int secondYear;
+	int firstMonth;
+	int secondMonth;
+	int firstDay;
+	int secondDay;
+	
+	System.out.println("Please enter the oldest date: formatted \"YYYY MM DD\"");
+	
+	firstYear = scnr.nextInt();
+	firstMonth = scnr.nextInt();
+	firstDay = scnr.nextInt();
+	
+	System.out.println("Please enter the most recent date: formatted \"YYYY MM DD\"");
+	
+	secondYear = scnr.nextInt();
+	secondMonth = scnr.nextInt();
+	secondDay = scnr.nextInt();
+	
+	int firstDate = (firstYear * 365 + firstMonth * 30) + firstDay;
+	int secondDate = (secondYear * 365 + secondMonth * 30) + secondDay;
+	
+	int durationdifferance = secondDate - firstDate;
+	
+	int day = (durationdifferance % 365) % 365;
+	int month = (durationdifferance % 365) / 30;
+	int year = durationdifferance / 365;
+	
+	System.out.println("The difference is " + year + "years, " + month + "months, " + day + " days.");
+	
+	}
+
+	}
